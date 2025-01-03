@@ -4,7 +4,7 @@ const Landsec = () => {
     return (
         <section className="bg-gradient-to-r from-purple-800 to-indigo-800 text-white h-screen flex items-center justify-center">
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">Hello, I'm [Your Name]</h1>
+                <h1 className="text-5xl md:text-7xl font-bold mb-4">Hello, I'm Huhammad Saad</h1>
                 <p className="text-xl md:text-2xl mb-8">A passionate developer creating modern web experiences</p>
 
 
