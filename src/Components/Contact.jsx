@@ -3,7 +3,7 @@ import React from "react"
 // import { Linkedin, Github, Twitter } from 'lucide-react'
 export default function Contact() {
   return (
-    <section id="contact" className="py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
+    <section id="contact" className="py-12 md:py-24 bg-[#051923] text-[#0582CA] dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
         <div className="max-w-2xl mx-auto">
@@ -13,7 +13,7 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
                 required
               />
             </div>
@@ -22,7 +22,7 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
                 required
               />
             </div>
@@ -31,13 +31,13 @@ export default function Contact() {
               <textarea
                 id="message"
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+              className="w-full px-6 py-3 bg-[#0582CA] text-white rounded-md focus:ring-[#006494] transition duration-300"
             >
               Send Message
             </button>

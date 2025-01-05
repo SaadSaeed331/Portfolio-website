@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-gray-800 p-4">
+        <nav className="bg-[#051923] fixed w-full top-0 z-10 p-4 ">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white text-2xl font-bold">My Portfolio</div>
+                <div className="text-[#00A6FB] text-2xl font-bold">My Portfolio</div>
                 <div className="block lg:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-white focus:outline-none"
+                        className=" text-[#00A6FB]  focus:outline-none"
                     >
                         <svg
                             className="w-6 h-6"
@@ -33,26 +33,26 @@ const Navbar = () => {
                     className={`${isOpen ? 'block' : 'hidden'
                         } w-full lg:flex lg:items-center lg:w-auto`}
                 >
-                    <ul className="lg:flex lg:justify-between text-white">
+                    <ul className="lg:flex lg:justify-between text-[#00A6FB]">
                         <li className="lg:mx-4 my-2 lg:my-0">
-                            <Link to="/" className="hover:text-gray-400">
+                            <a href="#landsec" className="hover:text-gray-200 duration-200">
                                 Home
-                            </Link>
+                            </a>
                         </li>
                         <li className="lg:mx-4 my-2 lg:my-0">
-                            <Link to="/about" className="hover:text-gray-400">
+                            <a href="#about" className="hover:text-gray-200 duration-200">
                                 About
-                            </Link>
+                            </a>
                         </li>
                         <li className="lg:mx-4 my-2 lg:my-0">
-                            <Link to="/about" className="hover:text-gray-400">
-                                services
-                            </Link>
+                            <a href="#projects" className="hover:text-gray-200 duration-200">
+                                Projects
+                            </a>
                         </li>
                         <li className="lg:mx-4 my-2 lg:my-0">
-                            <Link to="/about" className="hover:text-gray-400">
+                            <a href="#contact" className="hover:text-gray-200 duration-200">
                                 Contact
-                            </Link>
+                            </a>
                         </li>
 
 
