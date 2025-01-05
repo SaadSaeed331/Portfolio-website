@@ -2,9 +2,9 @@
 
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'E-commerce Platform Coachella',
     description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB.',
-    image: '/placeholder.svg',
+    image: '',
   },
   {
     title: 'Task Management App',
@@ -12,8 +12,8 @@ const projects = [
     image: '/placeholder.svg',
   },
   {
-    title: 'Social Media Dashboard',
-    description: 'An analytics dashboard for social media metrics using React and D3.js.',
+    title: 'instagram look alike',
+    description: 'A social media platform using MERN Stack',
     image: '/placeholder.svg',
   },
   {

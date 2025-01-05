@@ -1,4 +1,4 @@
-// import Image from 'next/image'
+import React from "react"
 
 export default function About() {
   return (
@@ -7,13 +7,13 @@ export default function About() {
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            {/* <Image */}
-              {/* src="/placeholder.svg" */}
-              {/* alt="Profile" */}
-              {/* width={400} */}
-              {/* height={400} */}
-              {/* className="rounded-full mx-auto" */}
-            {/* /> */}
+            <image
+              src=""
+              alt="Profile"
+              width={400}
+              height={400}
+              className="bg-grey-500 rounded-full mx-auto"
+            />
           </div>
           <div className="md:w-1/2">
             <p className="text-lg mb-6">
