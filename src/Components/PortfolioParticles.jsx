@@ -1,58 +1,131 @@
-import React from "react";
-import Particles from "@tsparticles/react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-const PortfolioParticles = () => {
-  const particlesInit = async (engine) => {
-    await loadFull(engine); // Load the full tsParticles bundle
-  };
+function PortParticles() {
+    const containerRef = useRef(null), [ init, setInit ] = useState(false);
 
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
-        background: {
-          color: { value: "#0d47a1" }, // Background color
-        },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onClick: { enable: true, mode: "push" },
-            onHover: { enable: true, mode: "repulse" },
-          },
-          modes: {
-            push: { quantity: 4 },
-            repulse: { distance: 100, duration: 0.4 },
-          },
-        },
-        particles: {
-          color: { value: "#ffffff" },
-          links: {
-            color: "#ffffff",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: { enable: true },
-          move: {
-            direction: "none",
-            enable: true,
-            outModes: { default: "bounce" },
-            random: false,
-            speed: 2,
-            straight: false,
-          },
-          number: { density: { enable: true, area: 800 }, value: 80 },
-          opacity: { value: 0.5 },
-          shape: { type: "circle" },
-          size: { value: { min: 1, max: 5 } },
-        },
-        detectRetina: true,
-      }}
-    />
-  );
-};
+    useEffect(() => {
+        if (init) {
+            return;
+        }
 
-export default PortfolioParticles;
+        initParticlesEngine(async (engine) => {
+            await loadFull(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, [ init ]);
+
+    const particlesLoaded = useCallback(
+            (container) => {
+                containerRef.current = container;
+
+                window.particlesContainer = container;
+            },
+            [ containerRef ]
+        ),
+        options = useMemo(
+            () => ({
+                fullScreen: {
+                    zIndex: -1,
+                },
+                particles: {
+                    number: {
+                        value: 100,
+                    },
+                    links: {
+                        enable: true,
+                    },
+                    move: {
+                        enable: true,
+                    },
+                },
+                themes: [
+                    {
+                        name: "light",
+                        default: {
+                            value: true,
+                            auto: true,
+                            mode: "light",
+                        },
+                        options: {
+                            background: {
+                                color: "#ffffff",
+                            },
+                            particles: {
+                                color: {
+                                    value: "#000000",
+                                },
+                                links: {
+                                    color: "#000000",
+                                },
+                            },
+                        },
+                    },
+                    {
+                        name: "dark",
+                        default: {
+                            value: true,
+                            auto: true,
+                            mode: "dark",
+                        },
+                        options: {
+                            background: {
+                                color: "#000000",
+                            },
+                            particles: {
+                                color: {
+                                    value: "#ffffff",
+                                },
+                                links: {
+                                    color: "#ffffff",
+                                },
+                            },
+                        },
+                    },
+                ],
+            }),
+            []
+        ),
+        lightTheme = () => {
+            containerRef.current?.loadTheme("light");
+        },
+        darkTheme = () => {
+            containerRef.current?.loadTheme("dark");
+        };
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                {/* <img src={logo} className="App-logo" alt="logo"/> */}
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React
+                </a>
+                <button className="theme-btn" onClick={lightTheme}>
+                    Light
+                </button>
+                <button className="theme-btn" onClick={darkTheme}>
+                    Dark
+                </button>
+            </header>
+            {init && (
+                <Particles
+                    id="tsparticles"
+                    particlesLoaded={particlesLoaded}
+                    options={options}
+                />
+            )}
+        </div>
+    );
+}
+
+export default PortParticles;

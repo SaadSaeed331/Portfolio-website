@@ -1,14 +1,28 @@
-import React from 'react'
-import PortfolioParticles from './PortfolioParticles'
-
-
+import React, { useEffect } from 'react'
+// import ParticlesComponent from './Particles.js';
+// import PortParticles from './PortfolioParticles'
+// import Particles from "./Particles.json"
+// import {particlesJS} from 'particles.js'
 
 const Landsec = () => {
+
+    // useEffect(() => {
+    //     if (window.particlesJS) {
+    //         window.particlesJS.load('particles-js', './Particles.json', function () {
+    //             console.log('callback - particles-js config loaded');
+    //         });
+    //     } else {
+    //         console.error('particlesJS not found');
+    //     }
+    // }, []);
+
+
     return (
         <section className="bg-[#003554] text-[#00A6FB] h-screen flex items-center justify-center">
-            {/* <PortfolioParticles id="particles"/> */}
+            {/* <ParticlesComponent id="particles" /> */}
+            <div id="particles-js"></div>
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">Hello, I'm Huhammad Saad</h1>
+                <h1 className="text-5xl md:text-7xl font-bold mb-4">Hello, I'm Muhammad Saad</h1>
                 <h2 className="text-2xl md:text-3xl text-[#00A6FB] dark:text-blue-400 mb-6">MERN Stack Developer</h2>
 
 
