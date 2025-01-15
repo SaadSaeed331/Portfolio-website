@@ -4,12 +4,36 @@ import { HiOutlineMail } from "react-icons/hi"
 
 // import { Linkedin, Github, Twitter } from 'lucide-react'
 export default function Contact() {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "1a09b7d7-f3b8-4e5f-9cba-9053af9a7995");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <section id="contact" className="py-12 md:py-24 bg-[#051923] text-[#0582CA] dark:bg-gray-800">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
         <div className="max-w-2xl mx-auto">
-          <form className="space-y-4">
+          <form onSubmit={onSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">Name</label>
               <input
