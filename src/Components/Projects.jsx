@@ -2,6 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import image1 from "../assets/coachella.png"
 import image2 from "../assets/Screenshot.png"
+import image3 from "../assets/Screenshot2.png"
 
 const projects = [
   {
@@ -20,10 +21,10 @@ const projects = [
   },
   {
     title: 'instagram look alike',
-    description: 'A social media platform using MERN Stack',
-    image: '/placeholder.svg',
+    description: 'A social media platform using MERN Stack,made an authentication using JWT and used cloudinary for image upload.Added sign in and sign up functionality.',
+    image: ,
     link1:"",
-    link2:"https://coachella-e-comm.netlify.app/",
+    link2:"",
   },
   
 ]
