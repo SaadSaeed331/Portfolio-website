@@ -20,7 +20,7 @@ const projects = [
     link2:"https://github.com/SaadSaeed331/Auto-speed-ecom-clone",
   },
   {
-    title: 'instagram look alike',
+    title: 'Instagram look alike',
     description: 'A social media platform using MERN Stack,made an authentication using JWT and used cloudinary for image upload.Added sign in and sign up functionality.',
     image: image3,
     link1:"",
