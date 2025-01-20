@@ -37,6 +37,7 @@ export default function Contact() {
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">Name</label>
               <input
+              name="name"
                 type="text"
                 id="name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
@@ -46,6 +47,7 @@ export default function Contact() {
             <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium">Email</label>
               <input
+              name="email"
                 type="email"
                 id="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
@@ -55,6 +57,7 @@ export default function Contact() {
             <div>
               <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
               <textarea
+              name="message"
                 id="message"
                 rows={4}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#006494] dark:bg-gray-700 dark:border-gray-600"
@@ -71,22 +74,7 @@ export default function Contact() {
           <div className="mt-8 flex justify-center space-x-6">
             
             <a href="https://www.linkedin.com/in/saadsaeed331?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTBCzS0%2FmRwSlhnvDxXY%2F6g%3D%3D" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
-            <button class="animated-button">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                            ></path>
-                        </svg>
-                        {/* <span><FaLinkedin/></span> */}
-                        <span class="text">Linkedin</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                            ></path>
-                        </svg>
-                    </button>
-              
+            <FaLinkedin size={40} />              
             </a>
             <a href="https://github.com/SaadSaeed331" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
               <FaGithub size={40} />
