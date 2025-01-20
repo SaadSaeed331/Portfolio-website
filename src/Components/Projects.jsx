@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import image1 from "../assets/coachella.png"
-
+import image2 from "../assets/Screenshot.png"
 
 const projects = [
   {
@@ -14,24 +14,18 @@ const projects = [
   {
     title: 'Auto Parts E-commerce App',
     description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB.',
-    image: '/placeholder.svg',
-    link1:"#",
+    image: image2,
+    link1:"",
     link2:"https://github.com/SaadSaeed331/Auto-speed-ecom-clone",
   },
   {
     title: 'instagram look alike',
     description: 'A social media platform using MERN Stack',
     image: '/placeholder.svg',
-    link1:"https://coachella-e-comm.netlify.app/",
+    link1:"",
     link2:"https://coachella-e-comm.netlify.app/",
   },
-  {
-    title: 'Weather Forecast App',
-    description: 'A weather application with geolocation and 5-day forecast using OpenWeatherMap API.',
-    image: '/placeholder.svg',
-    link1:"https://coachella-e-comm.netlify.app/",
-    link2:"https://coachella-e-comm.netlify.app/",
-  },
+  
 ]
 
 export default function Projects() {
