@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Birds from 'vanta/dist/vanta.birds.min'
+import BlurText from './Animations'
 
 const Landsec = () => {
 
@@ -24,13 +25,22 @@ const Landsec = () => {
     }, [])
 
 
-
+    const handleAnimationComplete = () => {
+        console.log('Animation completed!');
+        };
     return (
         <section className="bg-[#003554] text-[#00A6FB] h-screen flex items-center justify-center">
             <div id="vanta"></div>
             <div id='vanta' className="flex flex-col items-center justify-center">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">Hello, I'm Muhammad Saad</h1>
-                <h2 className="text-2xl md:text-3xl text-[#00A6FB] dark:text-blue-400 mb-6">MERN Stack Developer</h2>
+                <BlurText
+                text={`Hello, I'm Muhammad Saad`}
+                delay={150}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-5xl md:text-7xl font-bold mb-4"
+                />
+                  <h2 className="text-2xl md:text-3xl text-[#00A6FB] dark:text-blue-400 mb-6">MERN Stack Developer</h2>
 
 
                 <a href="#projects">
